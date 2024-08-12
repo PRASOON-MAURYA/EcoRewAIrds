@@ -1,0 +1,31 @@
+<nav>
+  <ul>
+    <!-- <li><a href="/auth/register">Register</a></li> -->
+
+
+    <li><a href="/">Home</a></li>
+    <% if (user) { %>
+      <% if (user.role=="user" ) { %>
+        <li><a href="/users">Leaderboard</a></li>
+        <li>
+          <form action="/teacher/periods/<%= user._id %>/edit" method="post">
+
+          </form>
+        </li>
+        <li> <a href="/score/<%= user._id %>">Score</a>
+        <li> <a href="/balance/<%= user._id %>">Balance</a>
+          <% } else if(user.role=="admin" ){ %>
+        <li> <a href="/users">Leaderboard</a>
+        <li> <a href="/scanner">Scan QR</a>
+          <% } %>
+        <li> <a href="/auth/logout">Logout</a>
+        </li>
+
+        <% } else { %>
+
+          <li><a href="/auth/login/">Login</a></li>
+          <li><a href="/auth/register/">Register</a></li>
+
+          <% } %>
+  </ul>
+</nav>

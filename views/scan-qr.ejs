@@ -1,0 +1,66 @@
+<%- include('./layouts/header') %>
+    <h1>QR Code Scanner</h1>
+
+    <!-- Video element for camera preview -->
+    <!-- <video id="video" width="640" height="480" autoplay></video>
+
+    Canvas element for QR code detection
+    <canvas id="canvas" width="640" height="480" style="display:none;"></canvas> -->
+
+
+    <div style="text-align:center;">
+        <video id="video" width="640" height="480" autoplay></video>
+        <canvas id="canvas" style="display:none;"></canvas>
+    </div>
+
+    <script>
+        // Access the camera
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext('2d');
+        const scanInterval = 1000; // Scan every second
+
+        // Start camera stream
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+                video.play();
+            })
+            .catch(err => {
+                console.error('Error accessing camera:', err);
+            });
+
+        // Function to capture image and send it to the server
+        function captureAndSend() {
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const imageData = canvas.toDataURL('image/jpeg');
+
+            fetch('/scanner', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ image: imageData })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.redirect) {
+                        // Stop the camera stream
+                        const stream = video.srcObject;
+                        if (stream) {
+                            const tracks = stream.getTracks();
+                            tracks.forEach(track => track.stop());
+                        }
+
+                        // Redirect to the specified URL
+                        window.location.href = data.redirect;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        // Periodically capture and send the image
+        setInterval(captureAndSend, scanInterval);
+    </script>
+
+    <%- include('./layouts/footer') %>

@@ -1,0 +1,18 @@
+<%- include('./layouts/header') %>
+
+<h2>Enter OTP</h2>
+<form action="/auth/verify-otp" method="post">
+<input type="email" name="email" value="<%= email %>" readonly><br><br> <!-- Here email will always exist -->
+
+<input type="text" name="enteredOTP" id="" placeholder="Enter OTP">
+<input type="text" name="systemOTP" id="" value="<%= locals.systemOTP ? systemOTP : '' %>" hidden>
+<input type="text" name="role" id="" value="<%= role %>" hidden>
+
+<input type="text" name="jhbvcvbh" id="" value="<%= locals.systemOTP ? systemOTP : '' %>" >
+
+<input type="text" name="purpose" id="" value="<%= purpose %>" hidden>
+<input type="submit" value="Verify OTP">
+
+</form>
+
+<%- include('./layouts/footer') %>

@@ -1,0 +1,629 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  text-decoration: none;
+  box-sizing: border-box;
+  list-style: none;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.request-card,
+.subject-card {
+  width: 80vw;
+  margin: 0 auto;
+  max-width: 400px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.exchange-details {
+  text-align: center;
+  font-weight: bold;
+}
+
+.request-card span,
+.subject-card span {
+  margin: 0;
+  /* color: #892323; */
+  font-size: 1.5rem;
+  font-weight: 550;
+  text-transform: capitalize;
+}
+
+.left-span {
+  color: #000000;
+}
+
+.right-span {
+  color: #90667e;
+}
+
+.accepted {
+  color: #00ab14;
+}
+
+.rejected {
+  color: #f63280;
+}
+
+.request-card p,
+.subject-card p {
+  margin-top: 30px;
+  /* color: #666; */
+}
+
+.subject-card p {
+  color: #0062cc;
+  /* padding: auto; */
+  padding: 1rem 2rem;
+  padding-top: 0;
+}
+
+.request-card button {
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 25%;
+  /* height: 2rem; */
+  padding: 10px;
+  font-size: 70%;
+
+  /* background-color: #e476ff; */
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.request-card form {
+  margin-right: 18%;
+}
+
+.request-card form button {
+  width: 180%;
+}
+
+.btn-accept {
+  background-color: #0069d9;
+}
+
+.btn-reject {
+  background-color: #f337a4;
+}
+
+.btn-cancel {
+  background-color: #312d2e;
+}
+
+#btn-waiting {
+  background-color: #312d2e00;
+  color: rgb(167, 39, 0);
+  font-weight: bolder;
+}
+
+#period-val {
+  background-color: #ffffff00;
+  color: #000;
+  font-weight: bolder;
+}
+
+.btn-box,
+.subject-box {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.subject-box {
+  /* justify-content: center; */
+  position: relative;
+}
+
+.subject-box>.notification-status {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+
+
+  content: "";
+  width: .75rem;
+  height: .75rem;
+  background-color: rgb(9, 233, 84);
+  border-radius: 25%;
+}
+
+nav {
+  z-index: 0;
+  box-shadow: inset 0 -3px 0 0 #fe2897;
+  box-shadow: 0 5px 10px #7d7d0192;
+  /* border: 1px solid; */
+  /* margin: 1rem 2rem; */
+  width: 100%;
+  height: 4rem;
+  margin: auto;
+  background-color: #782fff;
+  /* margin-top: 2px; */
+
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 1rem 1.5rem;
+}
+
+nav ul li a {
+  font-size: 1.5rem;
+  color: var(--blue);
+  color: #ffffff;
+  letter-spacing: 2px;
+  font-weight: light;
+}
+
+nav ul li a:hover {
+  color: black;
+}
+
+nav ul {
+  position: relative;
+}
+
+main {
+  position: relative;
+  height: calc(100vh - 4rem);
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+h2 {
+  text-align: center;
+  margin-top: 0;
+  text-transform: capitalize;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+@media screen and (max-width: 776px) {
+  nav {
+    height: 3rem;
+  }
+
+  nav ul li {
+    margin: 1rem .5rem;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+}
+
+.homepage-container {
+  width: 100vw;
+  height: calc(100vh - 4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-heading {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: -2rem;
+  margin-bottom: 4rem;
+}
+
+.homepage-paragraph {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.profile-container {
+  height: calc(100vh - 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.profile-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.profile-title {
+  color: grey;
+  font-size: 18px;
+}
+
+.profile-button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.profile-a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.profile-button:hover,
+.profile-a:hover {
+  opacity: 0.7;
+}
+
+div.messages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul.messages {
+  list-style: none;
+  /* min-width: 600px; */
+  /* max-width: 600px; */
+  width: 100vw;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 16px;
+}
+
+ul.messages * {
+  padding: 8px 12px;
+}
+
+.messages .error {
+  background-color: #f87171;
+}
+
+.messages .success {
+  background-color: #6ee7b7;
+}
+
+.messages .warning {
+  background-color: #fcd34d;
+}
+
+.messages .fun {
+  background-color: #bb02df;
+}
+
+.messages .info {
+  background-color: #93c5fd;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #4CAF50;
+  background-color: #00719a;
+  color: white;
+
+  /* text-transform: lowercase; */
+  text-transform: capitalize;
+}
+
+tr:hover {
+  /* background-color: #f5f5f5; */
+  opacity: .65;
+}
+
+td,
+tr,
+th {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.idle {
+  background-color: rgba(163, 255, 184, 0.872);
+}
+
+.busy {
+  background-color: rgba(151, 243, 255, 0.767);
+}
+
+.substitution {
+  background-color: rgba(255, 202, 141, 0.742);
+}
+
+.leave {
+  background-color: rgba(255, 145, 184, 0.742);
+}
+
+.exchange {
+  background-color: rgba(190, 78, 255, 0.788);
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0069d9;
+}
+
+input[type="submit"]:active {
+  background-color: #0062cc;
+}
+
+input[type="submit"]:focus {
+  outline: none;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+}
+
+.td-img {
+  padding: 1px 0;
+  margin: auto 0;
+}
+
+.duplicate {
+  background-color: #ff6b70;
+}
+
+/* Form styles */
+.teacher-registration-form {
+  display: block;
+  max-width: 1400px;
+  width: 100vw;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #64ddff51;
+}
+
+.teacher-registration-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 50vw;
+  min-width: 250px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.teacher-registration-container-day {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: safe;
+  justify-content: space-around;
+  justify-content: space-evenly;
+  justify-content: space-between;
+
+  width: 80vw;
+  margin: 5px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #65ff8e82;
+}
+
+.period-details {
+  max-width: 150px;
+}
+
+@media screen and (max-width: 776px) {
+  .period-details {
+    max-width: 45%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .period-details {
+    max-width: 100%;
+  }
+}
+
+.teacher-registration-container section {
+  flex-basis: 45%;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 776px) {
+  .teacher-registration-container section {
+    flex-basis: 98%;
+    margin-bottom: 20px;
+  }
+}
+
+
+.teacher-registration-container h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.teacher-registration-container .input-group {
+  margin-bottom: 10px;
+}
+
+.teacher-registration-container label {
+  display: block;
+  font-weight: bold;
+}
+
+.teacher-registration-container input[type="text"],
+.teacher-registration-container input[type="email"],
+.teacher-registration-container input[type="number"],
+.teacher-registration-container input[type="file"],
+.teacher-registration-container input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.teacher-registration-container input[type="file"] {
+  display: block;
+  margin-top: 11.5px;
+}
+
+.teacher-registration-container .submit-btn {
+  text-align: center;
+}
+
+.teacher-registration-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.teacher-registration-container button:hover {
+  background-color: #0056b3;
+}
+
+.day-row {
+  background-color: rgb(255, 234, 126);
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  /* background-color: hsl(0, 0%, 100%); */
+  height: 90vh;
+  flex-direction: column;
+}
+
+.scorebox {
+  background-color: #9fffaa;
+  border: 5px solid green;
+  border-radius: 5%;
+  height: 15vh;
+  width: 20vh;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 5vh;
+  padding-top: 3vh;
+  margin: auto;
+}
+
+#score {
+  background-image: url("bg-coins.jpg");
+  background-size: cover;
+
+}
+
+#balance {
+  background-image: url("bg-balance.avif");
+  background-size: cover;
+
+}

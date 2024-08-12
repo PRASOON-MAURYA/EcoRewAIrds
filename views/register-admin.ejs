@@ -1,0 +1,14 @@
+<%- include('./layouts/header') %>
+<h2>Admin Registration Form</h2>
+<form action="/auth/register-admin" method="POST">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" value="<%= locals.name ? name : '' %>">><br><br>
+  <label for="email">Email:</label>
+  <input type="email" name="email" value="<%= locals.email ? email : '' %>" readonly><br><br>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password"><br><br>
+  <label for="password2">Confirm:</label>
+  <input type="password" id="password2" name="password2"><br><br>
+  <input type="submit" value="Register">
+</form>
+<%- include('./layouts/footer') %>

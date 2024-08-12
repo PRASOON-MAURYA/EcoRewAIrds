@@ -1,0 +1,32 @@
+<%- include('./layouts/header') %>
+
+
+    <% if (pageKind==="Score" ) { %>
+        <div class="score" id="score">
+            <h2 style="align-items: center;width: 100vw;font-size: 10vh;margin-top: 10vh;margin-bottom: -20vh;text-shadow: 
+            3px 3px 0 #ffffff,   /* Shadow for border effect */
+            -3px -3px 0 #ffffff,
+            3px -3px 0 #ffffff,
+            -3px 3px 0 #ffffff;">SCORE
+            </h2>
+            <div class="scorebox">
+                <%= user.score %>
+            </div>
+        </div>
+
+        <% } else { %>
+
+            <div class="score" id="balance">
+                <h2 style="align-items: center;width: 100vw;color: antiquewhite;font-size: 10vh;margin-top: 10vh;margin-bottom: -20vh;text-shadow: 
+                    4px 4px 0 #000,   /* Shadow for border effect */
+                    -4px -4px 0 #000,
+                    4px -4px 0 #000,
+                    -4px 4px 0 #000;">
+                    BALANCE</h2>
+                <h2 class="scorebox">
+                    <%= user.balance %>
+                </h2>
+            </div>
+
+            <% } %>
+                <%- include('./layouts/footer') %>

@@ -1,0 +1,6 @@
+1. Created pages for login and registration links
+2. Implement logic for redirect to login page if user not logged in, and return to previous link after logged in
+3. Updated deserializeUser() function of passport.auth.js to dynamically access the different user collections
+4. Updated router links of auth.route.js and added new routers for login and registration links
+5. Updated Navbar Options and color
+                                                                                                                    -----> v3.2.0

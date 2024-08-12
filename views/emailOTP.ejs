@@ -1,0 +1,20 @@
+<%- include('./layouts/header') %>
+
+    <h2>Email Verification</h2>
+    <form action="/auth/send-otp" method="post">
+        <% if (role==='student' ) { %>
+            <input pattern="[a-zA-Z][a-zA-Z0-9]+@gmail\.com"
+                title="Please enter a valid student email (with @gmail.com)" type="email" name="email" value="" required
+                placeholder="Enter Your Gmail ID">
+            <% } else { %>
+                <input pattern="[a-zA-Z][a-zA-Z0-9]+@gmail\.com"
+                    title="Please enter a valid akg email (with @akgec.ac.in)" type="email" name="email" value=""
+                    required placeholder="Enter Your Gmail ID">
+                <% } %>
+                    <input type="text" name="role" id="" value="<%= role %>" hidden>
+
+                    <input type="text" name="purpose" id="" value="<%= purpose %>" hidden>
+                    <input type="submit" value="Generate OTP">
+    </form>
+
+    <%- include('./layouts/footer') %>

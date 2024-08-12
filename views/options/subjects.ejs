@@ -1,0 +1,16 @@
+ 
+
+<select name="subject" id="subject">
+    <option value="NONE" selected disabled>None</option>
+    
+    <option value="<%= temp %>" selected disabled><%= temp %></option>
+    
+    <option value="KAS" <%= temp === 'KAS' ? 'selected' : '' %>>KAS</option>
+    <option value="KIT" <%= temp === 'KIT' ? 'selected' : '' %>>KIT</option>
+    <option value="KNC" <%= temp === 'KNC' ? 'selected' : '' %>>KNC</option>
+    <option value="KCS" <%= temp === 'KCS' ? 'selected' : '' %>>KCS</option>
+    <option value="KMC" <%= temp === 'KMC' ? 'selected' : '' %>>KMC</option>
+    <option value="KCE" <%= temp === 'KCE' ? 'selected' : '' %>>KCE</option>
+    <option value="KOE" <%= temp === 'KOE' ? 'selected' : '' %>>KOE</option>
+    <option value="KEN" <%= temp === 'KEN' ? 'selected' : '' %>>KEN</option>
+</select>

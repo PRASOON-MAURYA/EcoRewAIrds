@@ -1,0 +1,51 @@
+<%- include('./layouts/header') %>
+
+    <h2>
+        <%= type %> user list
+    </h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Score</th>
+
+                <th>Balance</th>
+
+                <% if (user.role==='admin' ) { %>
+                    <th>Update</th>
+                    <% } %>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach( function(u, index) { %>
+
+                <tr>
+
+                    <td>
+                        <%= index + 1 %>
+                    </td>
+                    <td>
+                        <%= u.name %>
+                    </td>
+                    <td>
+                        <%= u.email %>
+                    </td>
+                    <td>
+                        <%= u.score %>
+                    </td>
+                    <td>
+                        <%= u.balance %>
+                    </td>
+
+
+                    <% if (user.role==='admin' ) { %>
+                        <td><a href="/score/<%= u.id %>/update">Update Score</a></td>
+                        <% } %>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+
+    <%- include('./layouts/footer') %>

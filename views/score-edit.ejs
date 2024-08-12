@@ -1,0 +1,20 @@
+<%- include('./layouts/header') %>
+    <div id="request-list">
+        <!-- <h1> demo.receiverID </h1> -->
+        <div class="request-card">
+            <div class="btn-box">
+
+            </div>
+            <form method="POST" action="/score/update">
+
+                <input name="score" value="<%= u.score %>">
+
+                <input name="userID" value="<%= u.id %>" hidden>
+
+
+                <button type="submit" style="width: 40%;margin: 2vh auto;">Submit</button>
+
+            </form>
+        </div>
+    </div>
+    <%- include('./layouts/footer') %>

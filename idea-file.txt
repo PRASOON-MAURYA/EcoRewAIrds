@@ -1,0 +1,2 @@
+new features
+add a class counsller and cr columns with sections/locations page

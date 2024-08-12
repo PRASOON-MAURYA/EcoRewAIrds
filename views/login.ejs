@@ -1,0 +1,29 @@
+<%- include('./layouts/header') %>
+    <div class="container">
+        <h2>Login Form</h2>
+        <form action="/auth/login/<%= userType %>" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <!-- <form action="/auth/reset-password" method="post" id="myForm">
+            <input type="text" name="userType" value="<%= userType %>" hidden>
+            <a href="#" onclick="submitForm(event)">Forget Password? Reset Here</a>
+            
+        </form> -->
+        <a href="/auth/reset/<%= userType %>">Forget Password? Reset Here</a>
+    </div>
+    <!-- <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            const form = document.getElementById("myForm");
+            form.submit();
+        }
+    </script> -->
+
+<%- include('./layouts/footer') %>
